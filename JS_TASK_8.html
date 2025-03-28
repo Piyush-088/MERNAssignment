@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff, #af52ec);
+        }
+        form {
+            width: 40%;
+            margin: auto;
+            padding: 20px;
+            background: #af52ec;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            width: 80%;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 80%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            width: 80%;
+            text-align: left;
+        }
+        .gender-container {
+            width: 80%;
+            text-align: left;
+            margin-top: 10px;
+        }
+        
+        .checkbox-container {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+            margin-top: 10px;
+        }
+        button {
+            width: 80%;
+            padding: 10px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+        <label>First Name:</label>
+        <input type="text" id="fname">
+        <span class="error" id="fnameError"></span>
+
+        <label>Last Name:</label>
+        <input type="text" id="lname">
+        <span class="error" id="lnameError"></span>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+        <span class="error" id="emailError"></span>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <span class="error" id="passwordError"></span>
+
+        <label>Re-enter Password:</label>
+        <input type="password" id="confirmPassword">
+        <span class="error" id="confirmPasswordError"></span>
+
+        <div class="gender-container">
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+        </div>
+        <span class="error" id="genderError"></span>
+
+        <label>Age:</label>
+        <input type="number" id="age">
+        <span class="error" id="ageError"></span>
+
+        <label>Phone Number:</label>
+        <input type="text" id="phone">
+        <span class="error" id="phoneError"></span>
+
+        <label>Address:</label>
+        <textarea id="address"></textarea>
+        <span class="error" id="addressError"></span>
+
+        <label>State:</label>
+        <input type="text" id="state">
+        <span class="error" id="stateError"></span>
+
+        <label>Country:</label>
+        <select id="country">
+            <option value="">Choose your country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+        </select>
+        <span class="error" id="countryError"></span>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="declaration">
+            <label for="declaration">I declare all details are correct.</label>
+        </div>
+        <span class="error" id="declarationError"></span>
+
+        <button type="submit">REGISTER</button>
+    </form>
+
+</body>
+</html>
